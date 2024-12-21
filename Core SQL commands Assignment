@@ -1,0 +1,22 @@
+Exercise 1
+SELECT * FROM customer
+
+SELECT productName, unitPrice FROM product
+
+
+Exercise 2
+SELECT * FROM salesOrder
+WHERE orderDate < "2007-06-01"
+
+SELECT * FROM product
+WHERE unitPrice < 20
+
+
+Exercise 3
+SELECT * FROM customer
+WHERE country = "USA" or country = "France"
+
+SELECT * FROM salesOrder
+WHERE NOT shipCountry = "USA" AND freight > 50;
+
+
