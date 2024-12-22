@@ -1,0 +1,38 @@
+Exercise 1
+SELECT COUNT(*) AS totalCustomer
+FROM customer
+
+SELECT MAX(unitPrice) AS "Maximum Price",
+MIN(unitPrice) AS "Minimum Price"
+FROM product
+
+
+Exercise 2
+SELECT productId, SUM(quantity) AS "Total Quantity"
+FROM orderdetail
+GROUP BY productId
+
+SELECT productId FROM product
+WHERE unitPrice > 20
+
+
+Exercise 3
+SELECT contactName AS 'Original name', UPPER(contactName) AS 'Name in Upper case' 
+FROM customer 
+
+SELECT productId, productName, ROUND(unitPrice, 0)
+FROM product
+
+
+Technical Question 1
+SELECT productId, unitPrice * quantity AS totalRevenue
+FROM orderdetail
+ORDER BY totalRevenue DESC
+
+
+Technical Question 2
+SELECT productId, quantity AS TotalOrderQuantity
+FROM orderdetail
+ORDER BY TotalOrderQuantity DESC
+LIMIT 3
+
