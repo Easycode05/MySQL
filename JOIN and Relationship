@@ -1,0 +1,31 @@
+Exercise 1
+SELECT 
+	customer.contactName
+FROM
+	customer
+INNER JOIN
+	orderdetail ON customer.custId = orderdetail.orderDetailId
+INNER JOIN
+	product ON orderdetail.orderdetailId = product.productId
+
+GROUP BY customer.contactName
+HAVING COUNT(DISTINCT orderdetail.productId) >= 2
+
+
+Exercise 2
+SELECT product.productName, SUM(orderdetail.quantity) AS totalQuantity
+FROM orderdetail
+INNER JOIN product
+ON product.productId = orderdetail.orderdetailId
+GROUP BY product.productName
+ORDER BY totalQuantity DESC
+LIMIT 3;
+
+
+Exercise 3
+SELECT customer.contactName, ((orderdetail.unitPrice * orderdetail.quantity) - orderdetail.discount) AS totalSpent
+FROM customer
+INNER JOIN orderdetail
+ON customer.custId = orderdetail.orderdetailId
+
+
