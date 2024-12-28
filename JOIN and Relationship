@@ -28,4 +28,9 @@ FROM customer
 INNER JOIN orderdetail
 ON customer.custId = orderdetail.orderdetailId
 
-
+Exercise 4
+SELECT C1.contactName AS 'Customer 1',
+C2.contactName AS 'Customer 2'
+FROM customer AS C1
+INNER JOIN customer AS C2
+ON C1.city = C2.city
